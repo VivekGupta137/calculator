@@ -3,7 +3,9 @@ version: '3.3'
 services:
   appbuild:
     build: 
+      context: .
       dockerfile: builder
   apprun:
     build: 
+      context: .
       dockerfile: runner
