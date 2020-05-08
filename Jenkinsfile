@@ -27,7 +27,7 @@ pipeline {
             echo "build and tests are successful"
             sh "docker-compose down"
             echo 'sending success the notification to rundeck'
-            // build job: 'rundeck-calculator'
+            build job: 'rundeck-calculator'
        }
    }
 }

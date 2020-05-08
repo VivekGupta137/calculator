@@ -3,5 +3,6 @@ version: '3.3'
 services:
   appbuild:
     build: .
+    
   apprun:
     build: ./runapp/
