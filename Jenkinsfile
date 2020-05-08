@@ -11,8 +11,6 @@ pipeline {
       stage('cloning from github'){
           steps {
               echo 'cloning the NimhansDevops repository'
-              git branch: 'master',
-                url: 'git@github.com:VivekGupta137/calculator.git'
               sh "ls -lat"
           }
       }
