@@ -14,21 +14,20 @@ pipeline {
               sh "ls -lat"
           }
       }
-      stage('building the project'){
+      stage('building and testing project'){
           steps{
               echo 'starting the docker compose container'
-              sh "docker-compose up app"
-              echo "sleeping for 5 seconds"
+              sh "docker-compose up appbuild"
           }
       }
    }
 //    all stages completed now add post build options
    post {
        success {
-            echo "stopping sql service forwarding this task to rundeck"
+            echo "build and tests are successful"
             sh "docker-compose down"
             echo 'sending success the notification to rundeck'
-            build job: 'rundeck'
+            // build job: 'rundeck-calculator'
        }
    }
 }
